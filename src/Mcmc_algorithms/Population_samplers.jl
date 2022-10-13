@@ -183,8 +183,8 @@ end
     cov_mat1 = PDMat(_Sigma1)
     cov_mat2 = PDMat(_Sigma2)
     
-    @views ind_param[:, tag_one] ~ filldist(MvNormal(mean_val[index_one], cov_mat1), len_tag1)
-    @views ind_param[:, tag_two] ~ filldist(MvNormal(mean_val[index_two], cov_mat2), len_tag2)
+    ind_param[:, tag_one] ~ filldist(MvNormal(mean_val[index_one], cov_mat1), len_tag1)
+    ind_param[:, tag_two] ~ filldist(MvNormal(mean_val[index_two], cov_mat2), len_tag2)
     
     return mean, scale_val, Omega
 end
